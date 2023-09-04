@@ -49,6 +49,7 @@ public class OrnnJframe extends javax.swing.JFrame {
         BotaoAlterar = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -90,7 +91,6 @@ public class OrnnJframe extends javax.swing.JFrame {
         jLabel3.setText("Poder:");
 
         comboboxmaterial.setFont(new java.awt.Font(" Cry Uncial Condensed", 0, 24)); // NOI18N
-        comboboxmaterial.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pretricita", "Pena de acuâmina", "rocha do vazio", "Gelo verdadeiro" }));
 
         jLabel4.setFont(new java.awt.Font(" Cry Uncial Condensed", 0, 24)); // NOI18N
         jLabel4.setText("Material:");
@@ -120,6 +120,8 @@ public class OrnnJframe extends javax.swing.JFrame {
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cutelo.png"))); // NOI18N
 
+        jButton1.setText("jButton1");
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -148,13 +150,18 @@ public class OrnnJframe extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(TextPoder, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(comboboxmaterial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(61, 61, 61)
-                        .addComponent(TextCusto, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(61, 61, 61))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(19, 19, 19)))
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(comboboxmaterial, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(TextCusto, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -181,10 +188,15 @@ public class OrnnJframe extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(TextPoder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(comboboxmaterial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(comboboxmaterial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
@@ -501,6 +513,7 @@ public class OrnnJframe extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> comboboxmaterial;
     private javax.swing.JLabel fotoornn;
     private javax.swing.JLabel fotoporo1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

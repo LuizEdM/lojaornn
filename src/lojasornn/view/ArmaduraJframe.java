@@ -5,6 +5,12 @@
  */
 package lojasornn.view;
 
+import java.util.ArrayList;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import lojasornn.controller.ArmaduraController;
+import lojasornn.model.Armadura;
 /**
  *
  * @author 182210093
@@ -39,27 +45,28 @@ public class ArmaduraJframe extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        TextNomeD = new javax.swing.JTextField();
+        TextArmadura = new javax.swing.JTextField();
+        TextPoderD = new javax.swing.JTextField();
+        TextCustoD = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
+        MaterialCRUD = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TabelaD = new javax.swing.JTable();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        TextIdExcluirD = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -117,26 +124,42 @@ public class ArmaduraJframe extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font(" Cry Uncial Condensed", 0, 24)); // NOI18N
         jLabel8.setText("Armadura:");
 
-        jTextField1.setFont(new java.awt.Font(" Cry Uncial Condensed", 0, 24)); // NOI18N
+        TextNomeD.setFont(new java.awt.Font(" Cry Uncial Condensed", 0, 24)); // NOI18N
 
-        jTextField2.setFont(new java.awt.Font(" Cry Uncial Condensed", 0, 24)); // NOI18N
+        TextArmadura.setFont(new java.awt.Font(" Cry Uncial Condensed", 0, 24)); // NOI18N
 
-        jTextField3.setFont(new java.awt.Font(" Cry Uncial Condensed", 0, 24)); // NOI18N
+        TextPoderD.setFont(new java.awt.Font(" Cry Uncial Condensed", 0, 24)); // NOI18N
 
-        jTextField5.setFont(new java.awt.Font(" Cry Uncial Condensed", 0, 24)); // NOI18N
+        TextCustoD.setFont(new java.awt.Font(" Cry Uncial Condensed", 0, 24)); // NOI18N
 
         jComboBox1.setFont(new java.awt.Font(" Cry Uncial Condensed", 0, 24)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pretricita", "Pena de acuâmina", "rocha do vazio", "Gelo verdadeiro" }));
 
         jButton1.setFont(new java.awt.Font(" Cry Uncial Condensed", 1, 18)); // NOI18N
         jButton1.setText("Cadastrar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setFont(new java.awt.Font(" Cry Uncial Condensed", 1, 18)); // NOI18N
         jButton2.setText("Alterar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/espinhos.png"))); // NOI18N
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/capa.png"))); // NOI18N
+
+        MaterialCRUD.setText("+");
+        MaterialCRUD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MaterialCRUDActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -160,14 +183,17 @@ public class ArmaduraJframe extends javax.swing.JFrame {
                             .addComponent(jLabel6))))
                 .addGap(28, 28, 28)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(270, Short.MAX_VALUE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(TextPoderD, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(TextArmadura, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TextNomeD, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(MaterialCRUD))
+                    .addComponent(TextCustoD, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(223, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addGap(0, 220, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -190,24 +216,25 @@ public class ArmaduraJframe extends javax.swing.JFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(115, 115, 115)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TextArmadura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel8))))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TextNomeD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TextPoderD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(MaterialCRUD, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TextCustoD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(69, 69, 69)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
@@ -225,7 +252,7 @@ public class ArmaduraJframe extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 651, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Cadastrar e alterar", jPanel2);
@@ -237,8 +264,13 @@ public class ArmaduraJframe extends javax.swing.JFrame {
 
         jButton3.setFont(new java.awt.Font(" Cry Uncial Condensed", 0, 18)); // NOI18N
         jButton3.setText("Mostrar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TabelaD.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -246,7 +278,7 @@ public class ArmaduraJframe extends javax.swing.JFrame {
                 "Armadura", "Nome", "Poder", "Custo"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(TabelaD);
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/manopla.png"))); // NOI18N
 
@@ -289,7 +321,7 @@ public class ArmaduraJframe extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(80, 80, 80)
                 .addComponent(jButton3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                 .addComponent(jLabel11)
                 .addGap(31, 31, 31))
         );
@@ -312,10 +344,15 @@ public class ArmaduraJframe extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font(" Cry Uncial Condensed", 0, 36)); // NOI18N
         jLabel12.setText("Id da armadura:");
 
-        jTextField4.setFont(new java.awt.Font(" Cry Uncial Condensed", 0, 36)); // NOI18N
+        TextIdExcluirD.setFont(new java.awt.Font(" Cry Uncial Condensed", 0, 36)); // NOI18N
 
         jButton4.setFont(new java.awt.Font(" Cry Uncial Condensed", 0, 18)); // NOI18N
         jButton4.setText("Excluir");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/randuin.png"))); // NOI18N
 
@@ -331,7 +368,7 @@ public class ArmaduraJframe extends javax.swing.JFrame {
                         .addGap(160, 160, 160)
                         .addComponent(jLabel12)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(TextIdExcluirD, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(290, 290, 290)
                         .addComponent(jButton4))
@@ -352,10 +389,10 @@ public class ArmaduraJframe extends javax.swing.JFrame {
                 .addGap(154, 154, 154)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TextIdExcluirD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(63, 63, 63)
                 .addComponent(jButton4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
                 .addComponent(jLabel16)
                 .addGap(30, 30, 30))
         );
@@ -390,6 +427,52 @@ public class ArmaduraJframe extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        //botão cadastrar
+        ArmaduraController botaocad = new ArmaduraController();
+        botaocad.cadastrarArmadura(TextArmadura.getText(), TextNomeD.getText(), TextPoderD.getText(), Float.parseFloat(TextCustoD.getText()));
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        //botão alterar
+        ArmaduraController botaoaltD = new ArmaduraController();
+        int IdArmadura = Integer.parseInt(JOptionPane.showInputDialog(null, "Cógido da arma:"));
+        botaoaltD.alterarArmadura(IdArmadura, TextArmadura.getText(), TextNomeD.getText(), TextPoderD.getText(), Float.parseFloat(TextCustoD.getText()));
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // botão deletar
+        ArmaduraController botaodelD = new ArmaduraController();
+        botaodelD.excluirArmadura(Integer.parseInt(TextIdExcluirD.getText()));
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // botão mostrar
+        ArmaduraController botaomostD = new ArmaduraController();
+        
+        ArrayList<Armadura> ListaArmadura = botaomostD.listarArmadura();
+        
+        DefaultTableModel tabelaD  =  (DefaultTableModel) TabelaD.getModel();
+        
+        String[] coluna = {"","","",""};
+        for(Armadura armadura:ListaArmadura){
+         
+        coluna[0] = String.valueOf(armadura.getTipoArmadura());
+        coluna[1] = String.valueOf(armadura.getNome());
+        coluna[2] = String.valueOf(armadura.getPoder());
+        coluna[3] = String.valueOf(armadura.getCusto());   
+        tabelaD.addRow(coluna);
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void MaterialCRUDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MaterialCRUDActionPerformed
+                                                   
+     //   ArmaduraJframe materialcrud = new ArmaduraJframe();
+     //   materialcrud.setVisible(true);
+     //  materialcrud.setSize(800,850);
+     //   materialcrud.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    }//GEN-LAST:event_MaterialCRUDActionPerformed
 
     /**
      * @param args the command line arguments
@@ -427,6 +510,13 @@ public class ArmaduraJframe extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton MaterialCRUD;
+    private javax.swing.JTable TabelaD;
+    private javax.swing.JTextField TextArmadura;
+    private javax.swing.JTextField TextCustoD;
+    private javax.swing.JTextField TextIdExcluirD;
+    private javax.swing.JTextField TextNomeD;
+    private javax.swing.JTextField TextPoderD;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -457,11 +547,5 @@ public class ArmaduraJframe extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
 }

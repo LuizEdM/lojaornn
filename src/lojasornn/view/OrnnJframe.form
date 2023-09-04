@@ -108,16 +108,24 @@
                                   <Component id="TextPoder" min="-2" pref="216" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
-                                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="comboboxmaterial" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                                  <Component id="TextCusto" min="-2" pref="216" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="comboboxmaterial" max="32767" attributes="0"/>
+                                      <Component id="TextCusto" pref="216" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jButton1" min="-2" pref="38" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
@@ -153,10 +161,18 @@
                               <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="TextPoder" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="comboboxmaterial" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="comboboxmaterial" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                                  <Component id="jButton1" min="-2" pref="37" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -227,12 +243,7 @@
                       <Font name=" Cry Uncial Condensed" size="24" style="0"/>
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="4">
-                        <StringItem index="0" value="Pretricita"/>
-                        <StringItem index="1" value="Pena de acu&#xe2;mina"/>
-                        <StringItem index="2" value="rocha do vazio"/>
-                        <StringItem index="3" value="Gelo verdadeiro"/>
-                      </StringArray>
+                      <StringArray count="0"/>
                     </Property>
                   </Properties>
                   <AuxValues>
@@ -296,6 +307,11 @@
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/imagens/cutelo.png"/>
                     </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="jButton1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="jButton1"/>
                   </Properties>
                 </Component>
               </SubComponents>

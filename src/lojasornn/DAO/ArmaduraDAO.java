@@ -24,7 +24,7 @@ public class ArmaduraDAO {
         Conexaoornn.executar(sql);
      }
      public static void excluirArmadura(int IdArmadura){
-         String sql = "DELETE FROM Armadura WHERE IdArmadura = " + IdArmadura;
+         String sql = "DELETE FROM armadura WHERE idarmadura = " + IdArmadura;
          
          Conexaoornn.executar(sql);
          

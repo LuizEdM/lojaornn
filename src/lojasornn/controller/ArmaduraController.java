@@ -22,7 +22,7 @@ public class ArmaduraController {
          
     }
     
-      public void excluirArma(int IdArmadura){
+      public void excluirArmadura(int IdArmadura){
         
         if(IdArmadura>0){
         Armadura armadura = new Armadura();

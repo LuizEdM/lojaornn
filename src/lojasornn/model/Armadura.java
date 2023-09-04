@@ -66,7 +66,7 @@ public Armadura(){
         ArmaduraDAO AdDAO = new ArmaduraDAO();
         AdDAO.alterarArmadura(armadura);
     }
-    public void excluirArmadura(int IdArma){
+    public void excluirArmadura(int IdArmadura){
         ArmaduraDAO AdDAO = new ArmaduraDAO();
         
         AdDAO.excluirArmadura(IdArmadura);
