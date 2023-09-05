@@ -468,10 +468,10 @@ public class ArmaduraJframe extends javax.swing.JFrame {
 
     private void MaterialCRUDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MaterialCRUDActionPerformed
                                                    
-     //   ArmaduraJframe materialcrud = new ArmaduraJframe();
-     //   materialcrud.setVisible(true);
-     //  materialcrud.setSize(800,850);
-     //   materialcrud.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        MaterialJframe materialcrud = new MaterialJframe();
+        materialcrud.setVisible(true);
+        materialcrud.setSize(800,850);
+        materialcrud.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }//GEN-LAST:event_MaterialCRUDActionPerformed
 
     /**
