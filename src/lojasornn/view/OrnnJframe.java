@@ -6,6 +6,7 @@
 package lojasornn.view;
 
 import java.util.ArrayList;
+import javax.swing.JFrame;
 import lojasornn.controller.ArmaController;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -49,7 +50,7 @@ public class OrnnJframe extends javax.swing.JFrame {
         BotaoAlterar = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        MaterialCRUDArma = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -120,7 +121,12 @@ public class OrnnJframe extends javax.swing.JFrame {
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cutelo.png"))); // NOI18N
 
-        jButton1.setText("+");
+        MaterialCRUDArma.setText("+");
+        MaterialCRUDArma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MaterialCRUDArmaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -160,8 +166,8 @@ public class OrnnJframe extends javax.swing.JFrame {
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(comboboxmaterial, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(TextCusto, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addGap(18, 18, 18)
+                .addComponent(MaterialCRUDArma)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -188,15 +194,12 @@ public class OrnnJframe extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(TextPoder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(comboboxmaterial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(21, 21, 21)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(comboboxmaterial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel4))
+                    .addComponent(MaterialCRUDArma, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
@@ -433,18 +436,20 @@ public class OrnnJframe extends javax.swing.JFrame {
     private void botaocadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaocadastroActionPerformed
            ArmaController botaoca = new ArmaController();
            botaoca.cadastrarArma(TextArma.getText(), TextNome.getText(), TextPoder.getText(), Float.parseFloat(TextCusto.getText()));
-                   
+           JOptionPane.showMessageDialog(null, "Arma Cadastrada", "Sucesso", JOptionPane.INFORMATION_MESSAGE);        
     }//GEN-LAST:event_botaocadastroActionPerformed
 
     private void BotaoDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoDeletarActionPerformed
              ArmaController botaodel = new ArmaController();
              botaodel.excluirArma(Integer.parseInt(TextIdExcluir.getText()));
+             JOptionPane.showMessageDialog(null, "Arma deletada", "sucesso", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_BotaoDeletarActionPerformed
 
     private void BotaoAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoAlterarActionPerformed
         ArmaController botaoalt = new ArmaController();
         int IdArma = Integer.parseInt(JOptionPane.showInputDialog(null, "Cógido da arma:"));
         botaoalt.alterarArma(IdArma ,TextArma.getText(), TextNome.getText(), TextPoder.getText(), Float.parseFloat(TextCusto.getText()));
+        JOptionPane.showMessageDialog(null, "Arma alterada", "sucesso", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_BotaoAlterarActionPerformed
 
     private void BotaoMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoMostrarActionPerformed
@@ -462,8 +467,18 @@ public class OrnnJframe extends javax.swing.JFrame {
         coluna[2] = String.valueOf(arma.getPoder());
         coluna[3] = String.valueOf(arma.getCusto());
         tabela.addRow(coluna);
+        }
     }//GEN-LAST:event_BotaoMostrarActionPerformed
-    }
+    
+    private void MaterialCRUDArmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MaterialCRUDArmaActionPerformed
+        MaterialJframe materialcrud = new MaterialJframe();
+        materialcrud.setVisible(true);
+        materialcrud.setSize(800,850);
+        materialcrud.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    }//GEN-LAST:event_MaterialCRUDArmaActionPerformed
+ 
+
+    
     /**
      * @param args the command line arguments
      */
@@ -503,6 +518,7 @@ public class OrnnJframe extends javax.swing.JFrame {
     private javax.swing.JButton BotaoAlterar;
     private javax.swing.JButton BotaoDeletar;
     private javax.swing.JButton BotaoMostrar;
+    private javax.swing.JButton MaterialCRUDArma;
     private javax.swing.JTable TabelaMostrar;
     private javax.swing.JTextField TextArma;
     private javax.swing.JTextField TextCusto;
@@ -513,7 +529,6 @@ public class OrnnJframe extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> comboboxmaterial;
     private javax.swing.JLabel fotoornn;
     private javax.swing.JLabel fotoporo1;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

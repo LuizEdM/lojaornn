@@ -432,6 +432,7 @@ public class ArmaduraJframe extends javax.swing.JFrame {
         //botão cadastrar
         ArmaduraController botaocad = new ArmaduraController();
         botaocad.cadastrarArmadura(TextArmadura.getText(), TextNomeD.getText(), TextPoderD.getText(), Float.parseFloat(TextCustoD.getText()));
+        JOptionPane.showMessageDialog(null, "Armadura Cadastrada", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -439,12 +440,14 @@ public class ArmaduraJframe extends javax.swing.JFrame {
         ArmaduraController botaoaltD = new ArmaduraController();
         int IdArmadura = Integer.parseInt(JOptionPane.showInputDialog(null, "Cógido da arma:"));
         botaoaltD.alterarArmadura(IdArmadura, TextArmadura.getText(), TextNomeD.getText(), TextPoderD.getText(), Float.parseFloat(TextCustoD.getText()));
+        JOptionPane.showMessageDialog(null, "Armadura alterada", "sucesso", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // botão deletar
         ArmaduraController botaodelD = new ArmaduraController();
         botaodelD.excluirArmadura(Integer.parseInt(TextIdExcluirD.getText()));
+        JOptionPane.showMessageDialog(null, "Armadura deletada", "sucesso", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -457,7 +460,8 @@ public class ArmaduraJframe extends javax.swing.JFrame {
         
         String[] coluna = {"","","",""};
         for(Armadura armadura:ListaArmadura){
-         
+        
+            
         coluna[0] = String.valueOf(armadura.getTipoArmadura());
         coluna[1] = String.valueOf(armadura.getNome());
         coluna[2] = String.valueOf(armadura.getPoder());

@@ -71,7 +71,6 @@ public class Arma {
     }
     public void excluirArma(int IdArma){
         ArmaDAO ADAO = new ArmaDAO();
-        
         ADAO.excluirArma(IdArma);
     }
     public ArrayList<Arma> listarArma(){
