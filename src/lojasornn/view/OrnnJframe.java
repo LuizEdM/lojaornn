@@ -77,6 +77,11 @@ public class OrnnJframe extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(100, 0, 0));
 
         TextArma.setFont(new java.awt.Font(" Cry Uncial Condensed", 0, 24)); // NOI18N
+        TextArma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TextArmaActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font(" Cry Uncial Condensed", 0, 24)); // NOI18N
         jLabel2.setText("Arma:");
@@ -92,6 +97,11 @@ public class OrnnJframe extends javax.swing.JFrame {
         jLabel3.setText("Poder:");
 
         comboboxmaterial.setFont(new java.awt.Font(" Cry Uncial Condensed", 0, 24)); // NOI18N
+        comboboxmaterial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboboxmaterialActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font(" Cry Uncial Condensed", 0, 24)); // NOI18N
         jLabel4.setText("Material:");
@@ -476,6 +486,14 @@ public class OrnnJframe extends javax.swing.JFrame {
         materialcrud.setSize(800,850);
         materialcrud.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }//GEN-LAST:event_MaterialCRUDArmaActionPerformed
+
+    private void comboboxmaterialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboboxmaterialActionPerformed
+        
+    }//GEN-LAST:event_comboboxmaterialActionPerformed
+
+    private void TextArmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextArmaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextArmaActionPerformed
  
 
     

@@ -5,10 +5,9 @@
         <group>
             <file>file:/C:/Users/182210093/Desktop/trabalhos/LojasOrnn/src/lojasornn/view/SuperJframe.java</file>
             <file>file:/C:/Users/182210093/Desktop/trabalhos/LojasOrnn/src/lojasornn/view/MaterialJframe.java</file>
-            <file>file:/C:/Users/182210093/Desktop/trabalhos/LojasOrnn/src/lojasornn/DAO/ArmaduraDAO.java</file>
-            <file>file:/C:/Users/182210093/Desktop/trabalhos/LojasOrnn/src/lojasornn/controller/ArmaduraController.java</file>
-            <file>file:/C:/Users/182210093/Desktop/trabalhos/LojasOrnn/src/lojasornn/view/ArmaduraJframe.java</file>
-            <file>file:/C:/Users/182210093/Desktop/trabalhos/LojasOrnn/src/lojasornn/model/Armadura.java</file>
+            <file>file:/C:/Users/182210093/Desktop/trabalhos/LojasOrnn/src/lojasornn/model/Material.java</file>
+            <file>file:/C:/Users/182210093/Desktop/trabalhos/LojasOrnn/src/lojasornn/controller/MaterialController.java</file>
+            <file>file:/C:/Users/182210093/Desktop/trabalhos/LojasOrnn/src/lojasornn/DAO/MaterialDAO.java</file>
         </group>
     </open-files>
 </project-private>

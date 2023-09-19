@@ -1,5 +1,7 @@
 package lojasornn.model;
 
+import lojasornn.DAO.MaterialDAO;
+
 public class Material {
     private int IdMaterial;
     private String NomeMaterial;
@@ -39,7 +41,7 @@ public class Material {
         this.LocalOrigem=localorigem;
     }
     
-    public String getMaterialPrima(){
+    public String getMateriaPrima(){
         return MateriaPrima;
     }
     public void setMateriaPrima(String materiaprima){

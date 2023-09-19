@@ -12,7 +12,7 @@ public class ArmaDAO {
                 + " '" + arma.getNome() +  " ' , "
                 + " '" + arma.getPoder() +  " ' , "
                 + " '" + arma.getCusto() + "  ') ";
-        System.out.println(sql);
+        
             
         Conexaoornn.executar(sql);
 }
