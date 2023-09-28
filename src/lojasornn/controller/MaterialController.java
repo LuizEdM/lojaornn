@@ -20,5 +20,9 @@ public class MaterialController {
         material.excluirMaterial(IdMaterial);
         }
     }
+
+    public String[] buscavalores() {
+       
+    }
     
 }

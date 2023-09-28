@@ -6,10 +6,12 @@
 package lojasornn.view;
 
 import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
 import lojasornn.controller.ArmaController;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import lojasornn.controller.MaterialController;
 import lojasornn.model.Arma;
 /**
  *
@@ -22,6 +24,7 @@ public class OrnnJframe extends javax.swing.JFrame {
      */
     public OrnnJframe() {
         initComponents();
+        preenchecombo();
     }
 
     /**
@@ -495,7 +498,15 @@ public class OrnnJframe extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TextArmaActionPerformed
  
+public void preenchecombo(){
+    String labels[] = { "A", "B", "C", "D", "E" };
+    final DefaultComboBoxModel model = new DefaultComboBoxModel(labels);
 
+    MaterialController MC = new MaterialController();
+    labels = MC.buscavalores();
+   
+
+}
     
     /**
      * @param args the command line arguments
