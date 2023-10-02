@@ -133,6 +133,7 @@ public class ArmaduraJframe extends javax.swing.JFrame {
         TextCustoD.setFont(new java.awt.Font(" Cry Uncial Condensed", 0, 24)); // NOI18N
 
         jComboBox1.setFont(new java.awt.Font(" Cry Uncial Condensed", 0, 24)); // NOI18N
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Petricita", "Gema ardente", "essência de dragão" }));
 
         jButton1.setFont(new java.awt.Font(" Cry Uncial Condensed", 1, 18)); // NOI18N
         jButton1.setText("Cadastrar");

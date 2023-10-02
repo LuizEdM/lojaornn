@@ -22,7 +22,7 @@ public class MaterialController {
     }
 
     public String[] buscavalores() {
-       
+       return null;
     }
     
 }
